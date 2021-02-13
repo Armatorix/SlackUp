@@ -1,0 +1,2 @@
+# SlackUp
+StandUp report generator.
