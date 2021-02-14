@@ -4,6 +4,7 @@ import (
 	"log"
 
 	"github.com/Armatorix/SlackUp/generator"
+	"github.com/Armatorix/SlackUp/slack"
 	"github.com/spf13/cobra"
 )
 
@@ -14,8 +15,9 @@ var generateCmd = &cobra.Command{
 	Long:    "Generate your totally random standup note.",
 	Run: func(cmd *cobra.Command, args []string) {
 		report := generator.Report()
-		log.Println(report)
+		err := slack.SendMsg(&cfg.Slack, report.String())
+		if err != nil {
+			log.Printf("send message failed %v\n", err)
+		}
 	},
 }
-
-// TODO add PM mode: sorry, cannot talk right now:
