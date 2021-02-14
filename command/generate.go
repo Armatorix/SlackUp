@@ -17,3 +17,5 @@ var generateCmd = &cobra.Command{
 		log.Println(report)
 	},
 }
+
+// TODO add PM mode: sorry, cannot talk right now:

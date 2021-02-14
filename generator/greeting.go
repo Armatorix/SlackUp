@@ -7,7 +7,7 @@ import (
 )
 
 var (
-	greetingsList = []string{
+	stumpGreetings = []string{
 		"hi",
 		"hello",
 		"hey everyone",
@@ -16,6 +16,6 @@ var (
 
 func Greeting() model.Greeting {
 	return model.Greeting{
-		Val: greetingsList[rand.Intn(len(greetingsList))],
+		Val: stumpGreetings[rand.Intn(len(stumpGreetings))],
 	}
 }
