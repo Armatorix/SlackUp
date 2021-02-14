@@ -1,7 +1,6 @@
 package command
 
 import (
-	"fmt"
 	"log"
 	"os"
 
@@ -24,8 +23,11 @@ func init() {
 }
 
 func initConfig() {
-	cfg, err := config.New(cfgFile)
-	fmt.Println(cfg, err)
+	var err error
+	cfg, err = config.New(cfgFile)
+	if err != nil {
+		log.Fatalf("failed config load: %v", err)
+	}
 }
 func Execute() {
 	if err := rootCmd.Execute(); err != nil {

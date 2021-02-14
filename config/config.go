@@ -19,6 +19,7 @@ type SlackConfig struct {
 	ClientSecret      string `yaml:"client_secret"`
 	VerificationToken string `yaml:"verification_token"`
 	AuthToken         string `yaml:"auth_token"`
+	Channel           string `yaml:"channel"`
 }
 
 func New(cfgPath string) (*Config, error) {
