@@ -2,8 +2,6 @@ package generator
 
 import (
 	"math/rand"
-
-	"github.com/Armatorix/SlackUp/model"
 )
 
 var (
@@ -14,8 +12,6 @@ var (
 	}
 )
 
-func Greeting() model.Greeting {
-	return model.Greeting{
-		Val: stumpGreetings[rand.Intn(len(stumpGreetings))],
-	}
+func Greeting() string {
+	return stumpGreetings[rand.Intn(len(stumpGreetings))]
 }

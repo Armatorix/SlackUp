@@ -7,16 +7,18 @@ import (
 	"github.com/Armatorix/SlackUp/x/xmath/xrand"
 )
 
-// $status $action for $component XD
 var stumpComponents = []string{
 	"new feature",
-	"task from yesterday",
+	"task from previous day",
 	"new bug",
 	"network bug",
+	"docker image",
+	"service",
+	"scylla cluster",
+	"database migration",
 }
 
 var stumpActions = []string{
-	"doing tests",
 	"writing automation tests",
 	"testing manually",
 	"implementation",
@@ -27,8 +29,7 @@ var stumpStatus = []string{
 	"started",
 	"continuing",
 	"wip",
-	"finished",
-	"done",
+	"finish",
 }
 
 func TaskN(task, action, status int) model.Task {
